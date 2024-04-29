@@ -7,11 +7,14 @@ const Sidebar = ({ data }) => {
   const [openMenus, setOpenMenus] = useState({});
 
   const handleMenuToggle = (menuId) => {
+    console.log("menuId", menuId, openMenus);
     setOpenMenus((prevOpenMenus) => ({
       ...prevOpenMenus,
       [menuId]: !prevOpenMenus[menuId],
     }));
   };
+
+  console.log("menuList", openMenus);
 
   const renderSubMenu = (children, parentId) => {
     if (!children) return null;
